@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Google Images</title>
+        <link rel="stylesheet" type="text/css" href="/css/mystyle.css">
+        <script>
+            window.onload=function(){
+                var x1=document.getElementById("tag1");
+                var x2=document.getElementById("tag2");
+                var subw=document.getElementById("subw");
+                var subw_close=document.getElementById("x");
+                var btn1=document.getElementById("btn1");
+                var tag2=document.getElementById("_tag2");
+                var tag1=document.getElementById("_tag1");
+                var file_path=document.getElementById("awyMjb");
+                var form2=document.getElementById("myFrom2");
+                tag2.addEventListener('click',function(){
+                    x2.style.display='block';
+                    x1.style.display='none';
+                })
+                tag1.addEventListener('click',function(){
+                    x1.style.display='block';
+                    x2.style.display='none';
+                })
+                subw_close.addEventListener('click',function(){
+                    subw.style.visibility='hidden';
+                })
+                btn1.addEventListener('click',function(){
+                    subw.style.visibility='visible';
+                })
+                file_path.addEventListener('change',function(){
+                    form2.action="https://www.google.com/searchbyimage/upload";
+                    form2.method="POST";
+                    form2.submit();
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div class="top"><!--顶部-->
+        </div>
+        <div class="logo">
+            <img src="/images/googlelogo.png">
+            <span class="imagelogo">Images</span>
+        </div>
+        <div class="content"><!--主题-->
+            <form id="myForm" action="https://www.google.com/search"><!--搜索框-->
+                <div class="search">
+                    <input type="text" name="q">
+                    <div class="sbtn">
+                        <button type="button" id="btn1">
+                            <img src="/images/photo_camera_grey600_24dp.png" height="24px">
+                        </button>
+                        <button type="submit" id="btn2">
+                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-iml="1647678408005" style="fill: #4285f4;">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="tophf">
+                    <input name="hl" value="en" type="hidden">
+                    <input name="tbm" value="isch" type="hidden">
+                    <input name="sxsrf" value="APq-WBvMUZjZLBCHAgixJ6nJfbA9-S_nCQ:1647677943261" type="hidden">
+                    <input name="source" type="hidden" value="hp">
+                    <input name="biw" type="hidden" value="482">
+                    <input name="bih" type="hidden" value="704">
+                    <input value="95E1Yoj3CtLTkPIPp4eWqAE" name="ei" type="hidden">
+                    <input value="AHkkrS4AAAAAYjWgBxEkqTApUGueWC8KC5CDRwvWkztC" name="iflsig" type="hidden">
+                </div>
+            </form>
+            <div class="subw" id="subw"><!--子窗口-->
+                <div class="msg"><!--文字提示-->
+                    <div class="msg1">
+                        <p>Search by image</p>
+                        <div id="x"></div>
+                    </div>
+                    <div class="msg2">
+                        <p>Search Google with an image instead of text. Try dragging an image here.</p>
+                    </div>
+                </div>
+                <div><!--搜索-->
+                    <form action="https://www.google.com/searchbyimage" method="GET" enctype="multipart/form-data" id="myFrom2">
+                        <div class="tags" id="tag1" style="display: block;"><!--标签1-->
+                            <div class="tag">
+                                <div class="imgurl">
+                                    <span>Paste image URL</span>
+                                </div>
+                                <span id="_tag2">
+                                    <a class="uplimg">Upload an image</a>
+                                </span>
+                            </div>
+                            <div class="imginput">
+                                <input id="Ycyxxc" class="imgtext" aria-labelledby="cjyo4e" name="image_url" value="" autocomplete="off" spellcheck="false">
+                                <input class="imgsubmit" name="" id="btn" type="submit" value="Search by image">
+                            </div>
+                        </div>
+                        <div class="tags" id="tag2" style="display: none;"><!--标签2-->
+                            <div class="tag">
+                                <span id="_tag1">
+                                    <a class="uplimg">Paste image URL</a>
+                                </span>
+                                <div class="imgurl">
+                                    <span>Upload an image</span>
+                                </div>
+                            </div>
+                            <div class="imginput">
+                                <input id="awyMjb" name="encoded_image" type="file">
+                            </div>
+                        </div>
+                        <input id="drITx" name="image_content" type="hidden">
+                        <input id="LEqfCf" name="filename" type="hidden">
+                        <input name="hl" type="hidden" value="en">
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+        
+</html>             
